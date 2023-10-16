@@ -1,0 +1,11 @@
+pipeline{
+    agent any 
+    steps{
+        stage{'Git Checkout'}
+        steps{
+            script{
+                git ' https://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@github.com/shubhammg98/basic_DevOps.git'
+            }
+        }
+    }
+}
