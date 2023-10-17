@@ -11,13 +11,15 @@ pipeline{
             }
             }
             
-               //git branch: 'main', url: 'https://github.com/shubhammg98/jenkins.git'    
         }
-        
-
+        stage('Unit Test Maven'){
+            steps{
+                script{
+                    mvnTest()
+                }
+            }
         }
-    }
-            
-
+    }       
+}
         
     
