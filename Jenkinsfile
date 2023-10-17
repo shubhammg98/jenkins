@@ -7,8 +7,8 @@ pipeline{
             steps{
                 script{
                     gitCheckout{
-                        branch:'main',
-                        url:"https://github.com/shubhammg98/jenkins.git"
+                        branch: "main",
+                        url: "https://github.com/shubhammg98/jenkins.git"
 
                     }
                 }
