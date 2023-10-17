@@ -1,4 +1,4 @@
-@library('my-shared-library') _
+@library('jenkins_shared_library') _
 pipeline{
     agent any 
     stages{
