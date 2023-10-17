@@ -1,3 +1,4 @@
+@library('my_shared_library')
 pipeline{
     agent any 
     stages{
