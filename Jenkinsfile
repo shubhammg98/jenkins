@@ -5,10 +5,10 @@ pipeline{
         //git checkout
         stage('Git Checkout'){
             steps{
-            gitCheckout{
-                    branch: "main",
+            gitCheckout(
+                    branch: 'main',
                     url: 'https://github.com/shubhammg98/jenkins.git'
-            }
+            )
             }
             
         }
