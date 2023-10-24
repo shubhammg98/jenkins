@@ -8,7 +8,7 @@ pipeline{
         //git checkout
         
         stage('Git Checkout'){
-                    when{expression {params.action == 'create'}}
+        when{expression {params.action == 'create'}}
                 
             steps{
             gitCheckout(
