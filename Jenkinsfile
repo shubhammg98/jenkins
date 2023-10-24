@@ -43,6 +43,23 @@ pipeline{
                 }
             }
         }
+          stage('Quality gate check'){
+        when{expression {params.action == 'create'}}   
+            steps{
+                script{
+                    def SonarqubecredentialsId = 'sonarqube-key'
+                    qualitygatestatus   (SonarqubecredentialsId)
+                }
+            }
+        }
+          stage('maven buildf'){
+        when{expression {params.action == 'create'}}   
+            steps{
+                script{
+                    mvnbuild()
+                }
+            }
+        }
     }       
 }
         
