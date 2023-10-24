@@ -1,8 +1,12 @@
 @Library('jenkins_shared_library') _
 pipeline{
-    agent any 
+    agent any
+    parameters{
+        choice(name: 'action',choices: 'create/ndelete', description: 'choose craete /Destroy')
+    } 
     stages{
         //git checkout
+        when{expression {param.action == 'create'}}
         stage('Git Checkout'){
             steps{
             gitCheckout(
@@ -13,6 +17,7 @@ pipeline{
             
         }
         stage('Unit Test Maven'){
+        when{expression {param.action == 'create'}}
             steps{
                 script{
                     mvnTest()
@@ -23,6 +28,13 @@ pipeline{
             steps{
                 script{
                     mvnintegrationTest()
+                }
+            }
+        }
+        stage('static code analysis'){
+            steps{
+                script{
+                    staticcodeanalysis()
                 }
             }
         }
