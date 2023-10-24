@@ -36,7 +36,8 @@ pipeline{
         stage('static code analysis'){
             steps{
                 script{
-                    staticcodeanalysis()
+                    def SonarqubecredentialsId = 'sonarqube-api'
+                    staticcodeanalysis(SonarqubecredentialsId)
                 }
             }
         }
