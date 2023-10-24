@@ -34,6 +34,7 @@ pipeline{
             }
         }
         stage('static code analysis'){
+        when{expression {params.action == 'create'}}   
             steps{
                 script{
                     def SonarqubecredentialsId = 'sonarqube-api'
