@@ -44,8 +44,8 @@ pipeline{
             }
         }
          
-          stage('maven buildf'){
-        when{expression {params.action == 'create'}}   
+          stage('maven build'){
+          when{expression {params.action == 'create'}}   
             steps{
                 script{
                     mvnbuild()
