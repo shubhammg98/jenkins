@@ -25,6 +25,7 @@ pipeline{
             }
         }
         stage('Integration Test Maven'){
+        when{expression {param.action == 'create'}}    
             steps{
                 script{
                     mvnintegrationTest()
