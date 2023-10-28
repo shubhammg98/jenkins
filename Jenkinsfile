@@ -38,15 +38,15 @@ pipeline{
                 }
             }
         }
-        stage('static code analysis'){
-        when{expression {params.action == 'create'}}   
-            steps{
-                script{
-                    def SonarqubecredentialsId = 'sonarqube-key'
-                    staticcodeanalysis(SonarqubecredentialsId)
-                }
-            }
-        }
+        //stage('static code analysis'){
+        //when{expression {params.action == 'create'}}   
+           // steps{
+                //script{
+                   // def SonarqubecredentialsId = 'sonarqube-key'
+                    //staticcodeanalysis(SonarqubecredentialsId)
+                //}
+            //}
+       // }
          
           stage('maven build'){
           when{expression {params.action == 'create'}}   
