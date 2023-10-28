@@ -3,9 +3,9 @@ pipeline{
     agent any
     parameters{
         choice(name: 'action',choices: 'create\ndelete', description: 'choose create /Destroy')
-        string(name:"imageame",description:"tag of the docker build",defaultvalue:"javaapp")
-        string(name:"apptag",description:"name of the application",defaultvalue:"v1")
-         string(name:"appname",description:"name of the application",defaultvalue:"springboot")
+        string(name:"imageame",description:"tag of the docker build",defaultValue:"javaapp")
+        string(name:"apptag",description:"name of the application",defaultValue:"v1")
+         string(name:"appname",description:"name of the application",defaultValue:"springboot")
     }
 
     stages{
