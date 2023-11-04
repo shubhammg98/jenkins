@@ -62,16 +62,16 @@ pipeline{
                 script{
                     dockerbuild("${params.Imagename}","${params.Imagetag}","${params.DockerHubUser}")
                 }
+            }   
+        }
+        stage('Docker Image Push :DockerHub'){
+          when{expression {params.action == 'create'}}   
+            steps{
+                script{
+                    dockerimagepush("${params.Imagename}","${params.Imagetag}","${params.DockerHubUser}")
+                }
             }
         }
-        //stage('Docker Image Push :DockerHub'){
-          //when{expression {params.action == 'create'}}   
-            //steps{
-               // script{
-             //       dockerimagepush("${params.Imagename}","${params.Imagetag}","${params.DockerHubUser}")
-           //     }
-         //   }
-       // }
     }       
 }
         
