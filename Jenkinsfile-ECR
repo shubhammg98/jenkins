@@ -74,7 +74,7 @@ pipeline{
           when{expression {params.action == 'create'}}   
             steps{
                 script{
-                    dockerimagepush("${params.aws_account_id}","${params.region}","${params.ECR_REPO_NAME}","${ACCESS_KEY}","${SECRET_KEY}")
+                    dockerImagePush("${params.aws_account_id}","${params.region}","${params.ECR_REPO_NAME}","${ACCESS_KEY}","${SECRET_KEY}")
                 }
             }
         }
