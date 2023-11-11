@@ -3,9 +3,9 @@ pipeline{
     agent any
     parameters{
         choice(name: 'action',choices: 'create\ndelete', description: 'choose create /Destroy')
-        string(name:"imageame",description:"tag of the docker build",defaultValue:"javaapp")
-        string(name:"imagetag",description:"name of the application",defaultValue:"javaapp")
-        string(name:"appname",description:"name of the application",defaultValue:"javaapp")
+        string(name:"Imageame",description:"tag of the docker build",defaultValue:"javaapp")
+        string(name:"Imagetag",description:"name of the application",defaultValue:"javaapp")
+        string(name:"Appname",description:"name of the application",defaultValue:"javaapp")
     }
 
     stages{
@@ -60,7 +60,7 @@ pipeline{
           when{expression {params.action == 'create'}}   
             steps{
                 script{
-                    dockerBuild("${params.Imagename}","${params.Imagetag}","${params.appname}")
+                    dockerBuild("${params.Imagename}","${params.Imagetag}","${params.Appname}")
                 }
             }   
         }
