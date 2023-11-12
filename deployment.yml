@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myjavaapp-deployment
+  name: javaapp-deployment
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: myjavaapp
+      app: javaapp
   template:
     metadata:
       labels:
-        app: myjavaapp
+        app: javaapp
     spec:
       containers:
-      - name: myjavaapp
-        image: 357541362906.dkr.ecr.ap-south-1.amazonaws.com/shubhamdevops:latest
+      - name: javaapp
+        image: 749185116658.dkr.ecr.us-east-1.amazonaws.com/shubhamdevops:latest
         ports:
         - containerPort: 8080
 
@@ -22,10 +22,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: myjavaapp-service
+  name: javaapp-service
 spec:
   selector:
-    app: myjavaapp
+    app: javaapp
   ports:
   - name: http
     port: 80
