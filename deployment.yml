@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: myjavaapp
-        image: 749185116658.dkr.ecr.us-east-1.amazonaws.com/shubhamdevops
+        image: 357541362906.dkr.ecr.ap-south-1.amazonaws.com/shubhamdevops:latest
         ports:
         - containerPort: 8080
 
